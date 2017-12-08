@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원 처리 SQL -->
+<mapper namespace="jsptest6.dao.MemberMapper">
+	
+	<!-- 회원 등록 -->
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO jsp6member
+			(id, password, name, phone, address)
+		VALUES
+			(#{id}, #{password}, #{name}, #{phone}, #{address})
+	</insert>
+	
+	<!-- 회원 찾기 -->
+	<select id="selectMember" parameterType="String" resultType="member"> 
+		SELECT
+			*
+		FROM
+			jsp6member
+		WHERE
+			id = #{id}
+	</select>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateMember" parameterType="member">
+		UPDATE
+			jsp6member
+		SET
+			password = #{password},
+			name = #{name},
+			phone = #{phone},
+			address = #{address}
+		WHERE
+			id = #{id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

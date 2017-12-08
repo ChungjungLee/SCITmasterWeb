@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시글 처리 SQL -->
+<mapper namespace="jsptest6.dao.BoardMapper">
+
+	<!-- 게시글 등록 -->
+	<insert id="writeBoard" parameterType="board">
+		INSERT INTO jsp6board
+			(boardnum, id, title, content)
+		VALUES
+			(jsp6board_seq.nextval, #{id}, #{title}, #{content})
+	</insert>
+</mapper>
