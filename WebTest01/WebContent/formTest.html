@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form 태그 연습 페이지</title>
+	</head>
+	<body>
+		<h1>form 태그 연습</h1>
+		
+		<!-- form 연습 1 action attribute에 아무것도 쓰지 않으면 현 페이지에서만 -->
+		<!-- http://localhost:8888/WebTest01/formTest.html?user_name=asdaf -->
+		<!-- GET방식으로 보내면 이와 같이 ?에 value가 주소 뒤에 추가된다 -->
+		<!-- http://localhost:8888/WebTest01/formTest.html -->
+		<!-- POST방식으로 보내면 이와 같이 정보가 숨겨져 주소에 출력된다 -->
+		<form action="" method="POST">
+			<!-- input 태그는 종류가 여러가지라 type att를 통해 지정을 해줘야 한다 -->
+			<input type="text" name="user_name">
+			<!-- 전송해주려면 다른 타입의 input tag가 필요하다 -->
+			<input type="password">
+			<input type="button" value="Button">
+			<br>
+			
+			<br>
+			<input type="email">
+
+			<br>
+			<input type="tel">
+			
+			<input type="checkbox">
+			<input type="radio" name="radio1" checked> radio1
+			<input type="radio" name="radio1">
+			
+			<br>
+			<!-- value att를 통해 값을 지정할 수 있다 눈에 보이지 않지만 전송은 된다 -->
+			<input type="hidden" value="바보야">
+			
+			<br>
+			<input type="submit">
+			<input type="reset">
+			<!-- 현재 해당 form 안에 있는 것만 초기환된다 -->
+		</form>
+		
+		<hr>
+		
+		<h1>form 연습 2</h1>
+		<!-- form을 제출하고 나면 돌아갈 곳이 index.html이다 -->
+		<!-- method의 default 값은 GET -->
+		<form action="index.html" method="POST">
+			<!-- 처음에 나오는 글을 placeholder에, 입력 가능한 글자수 20글자로 제한 -->
+			<input type="text" placeholder="ID" maxlength="5">
+			
+			<br>
+			
+			<input type="password" placeholder="PASSWORD" maxlength="5">
+			
+			<br>
+			
+			<input type="submit" value="Log In">
+		</form>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

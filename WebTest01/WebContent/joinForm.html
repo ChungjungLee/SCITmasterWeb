@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원가입 form</title>
+	</head>
+	
+	<body>
+		<h3>회원가입 입력</h3>
+		<!-- form을 작성한다는 것은 -->
+		<form action="">
+			<table>
+				<tr>
+					<th>아이디</th>
+					<td>
+						<input type="text">
+						<input type="submit" value="중복확인"> 
+					</td>
+				</tr>
+
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>비밀번호 확인</th>
+					<td>
+						<input type="password">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>이름</th>
+					<td>
+						<input type="text" title="name">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>이메일</th>
+					<td>
+						<input type="email">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>휴대폰</th>
+					<td>
+						<input type="tel">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>성별</th>
+					<td>
+						<input type="radio" name="sex">남자
+						<input type="radio" name="sex">여자
+					</td>
+				</tr>
+				
+				<tr>
+					<th>생년월일</th>
+					<td>
+						<input type="date">
+					</td>
+				</tr>
+				
+				<tr>
+					<th>해외IP 차단</th>
+					<td>
+						<input type="radio" name="foreignIP">On
+						<input type="radio" name="foreignIP">Off
+					</td>
+				</tr>
+				
+				<tr>
+					<th>생년월일</th>
+					<td colspan="3">
+						<!-- 스크롤바가 내려와 선택을 입력받을 수 있게 하는 input -->
+						<select>
+							<!-- 서버에 값을 넘겨주기 위해서 value att를 설정해주어야 한다 -->
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+						</select>
+						년
+						<select>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						월
+						<select>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						일
+					</td>
+				</tr>
+				
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="회원가입">
+					</td>
+				</tr>
+				
+			</table>
+		</form>
+	</body>
+</html>
