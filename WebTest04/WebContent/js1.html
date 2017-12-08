@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 테스트 1</title>
+		
+		<!-- js 사용을 위한 선언 -->
+		<script type="text/javascript">
+			// 주석 처리는 java와 같다
+			
+			/* static variable도 선언 가능 */
+			/* script 내 어느 곳에서나 아래 변수를 접근할 수 있다 */
+			var total = 0;
+			
+			/* return type이 없음 */
+			function test1 () {
+				alert('hello world!');
+			}
+			
+			/* paramater type도 없음 */
+			function test2(left, right) {
+				var result = left + right;
+				alert('결과값: ' + result);
+				return result;
+			}
+			
+			/* static var 참조 */
+			function test3(num) {
+				total += num;
+				alert('전역 변수값: ' + total);
+			}
+			
+			function test4(v1, v2, v3) {
+				var result = v1 + v2 - v3;
+				alert('결과값: ' + result);
+			}
+			
+			function test5() {
+				while(true) {
+					alert('무한트랩에 걸림ㅋ');
+				}
+				
+				for (var i = 0; i < array.length; i++) {
+					// 내용
+				}
+			}
+			
+			function inputTest1() {
+				/* confirm() 안에는 출력하고 싶은 문구를 적는다 */
+				/* java랑 마찬가지로 t/f 값을 가진다 */
+				var isConfirmed = confirm('확인하시겠습니까?');
+				
+				if (isConfirmed) {
+					// 참일 때
+					alert('확인되었습니다');
+				} else {
+					// 거짓일 때
+					alert('취소하였습니다');
+				}
+			}
+			
+			function inputTest2() {
+				/* user로부터 값을 입력받는 창을 띄워 입력 받은 값을 가져올 수 있다 */
+				var s = prompt('값을 입력해 주세요');
+				alert(s);
+				
+				/* 입력받은 것은 보통 문자열이기 마련 */
+				var num = prompt('숫자를 입력해 주세요');
+				
+				/* 상식적으로는 문자열의 연결이 나올 것이라고 생각된다 */
+				/* 변수가 동적으로 할당이 되기 때문에 타입이 그 때 그 때 경우에 따라서 달라진다 */
+				/* 때문에 코드를 보면서 어떤 타입인지를 추론해야 한다 */
+				var result1 = num + num;
+				
+				/* js의 parseInt()는 읽을 수 있는데 까지 숫자를 읽어 parsing 한다 */
+				var result2 = parseInt(num) + parseInt(num);
+				alert('result1: ' + result1 + ', result2: ' + result2);
+			}
+			
+			/* html내 div의 값을 변경하는 함수 */
+			function text1() {
+				//var text = "<p>이것은 p태그입니다</p>";
+				var text = "<img src='button.png'>";
+				
+				/* document 안에 있는 html 태그를 불러와야 변경이 가능하다 */
+				var box = document.getElementById('box');
+				box.innerHTML = text;
+			}
+			
+			function text2() {
+				var box = document.getElementById('box');
+				box.innerHTML = "";
+			}
+			
+			function text3() {
+				var box = document.getElementById('box');
+				
+				if (box.innerHTML == "") {
+					text1();
+				} else {
+					text2();
+				}
+			}
+			
+			var html = "<img src='button.png' style='width: 100px; height: 100px;'>";
+			function text4() {
+				var box = document.getElementById('box');
+				box.innerHTML += html;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1>자바스크립트 테스트 1 페이지</h1>
+		
+		<p> <a href="javascript:test1()">alert() 호출</a> </p>
+		
+		<p> <a href="javascript:test2(10, 20)">test2() 호출</a> </p>
+		
+		<p> <a href="javascript:test3(10)">test3() 호출</a> </p>
+		
+		<!-- 아래와 같이 함수를 동시에 여러개 부를 수 있다 -->
+		<!-- <p> <a href="javascript:test3(test2(1, 2))">test3() 호출</a> </p> -->
+		
+		<p>
+			<!-- button의 경우에는 onclick attribute에 js func을 호출하면 된다 -->
+			<input type="button" value="함수 호출" onclick="javascript:test1()">
+		</p>
+		
+		<p>
+			<!-- image 역시 마찬가지로 onclick att 사용 -->
+			<img alt="js func 호출" src="button.png" onclick="test1()" style="width:100px;height:100px;">
+		</p>
+		
+		<p>
+			<a href="javascript:test1()">
+				<img src="button.png" style="width:100px;height:100px;">
+			</a>
+		</p>
+		
+		<p> <a href="javascript:test4(1,2,3)">test4() 호출</a> </p>
+		
+		<p>
+			<input type="button" value="누르지 마세요" onclick="test5()">
+		</p>
+		
+		<p> <a href="javascript:inputTest1()">confirm() 테스트</a> </p>
+		
+		<p> <a href="javascript:inputTest2()">prompt() 테스트</a> </p>
+		
+		<p>
+			<a href="javascript:text3()">
+				innerHTML 생성
+			</a>
+		</p>
+		
+		<div id="box"></div>
+		
+		<p>
+			<a href="javascript:text2()">
+				innerHTML 삭제
+			</a>
+		</p>
+		
+		<p>
+			<a href="javascript:text4()">
+				innerHTML 추가
+			</a>
+		</p>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

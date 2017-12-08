@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 테스트 2</title>
+		
+		<script type="text/javascript">
+			/* func를 parameter로 넘기는 것도 가능하다 */
+			var t = function () {
+				alert('test');
+			};
+			
+			t();
+			
+			function check () {
+				var eName = document.getElementById('name');
+				/* input tag의 value라고 하는 att를 통해 입력된 값이 전달된다 */
+				if (eName.value == "") {
+					alert('이름을 입력하세요');
+					return false;
+				}
+				
+				var ePW = document.getElementById('password');
+				if (ePW.value == '') {
+					alert('비번을 입력하세요');
+					return false;
+				}
+				
+				var ePWC = document.getElementById('password-c');
+				if (ePWC.value == '') {
+					alert('비번 확인을 입력하세요');
+					return false;
+				} else if (ePWC.value != ePW.value) {
+					alert('비번과 비번 확인이 일치하지 않습니다');
+					return false;
+				}
+				
+				var eAge = document.getElementById('age');
+				if (eAge.value == '') {
+					alert('나이를 입력하세요');
+					return false;
+				} else if (isNaN(eAge.value)) {
+					// isNotaNumber()
+					alert('숫자를 입력하세요');
+					return false;
+				}
+				
+				var eJob = document.getElementById('job');
+				if (eJob.selectedIndex == 0) {
+					alert('직업을 선택해 주세요');
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1>자바스크립트 테스트 2 페이지</h1>
+		
+		<!-- 입력 받아야만 하는 항목을 반드시 입력하도록 하는 실습(validation check) -->
+		<!-- check() 실행되고 나온 결과값을 리턴받아 거짓이면 submit 안 하고 그냥 멈춤 -->
+		<form action="" method="post" onsubmit="return check();">
+			이름: <input type="text" name="name" id="name">
+			<br>
+			비밀번호: <input type="password" name="password" id="password">
+			<br>
+			비밀번호 체크: <input type="password" name="password-c" id="password-c">
+			<br>
+			나이: <input type="text" name="age" id="age">
+			<br>
+			직업: 
+				<select name="job" id="job">
+					<option>-</option>
+					<option>학생</option>
+					<option>선생</option>
+				</select>
+			<br>
+			<input type="submit" value="가입">
+			
+		</form>
+	</body>
+</html>
