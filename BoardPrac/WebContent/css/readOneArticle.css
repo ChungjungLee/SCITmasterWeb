@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+.outerdiv {
+	width: 80%;
+	margin: auto;
+}
+
+.titlerow {
+	width: 100%;
+	background-color: grey;
+	text-align: center;
+	font-family: "Nanum Gothic";
+}
+
+.miscrow {
+	width: 100%;
+	background-color: grey;
+	font-family: "Nanum Gothic";
+	clear: both;
+}
+
+.cell {
+	float: left;
+	text-align: center;
+}
+
+.viewcell {
+	width: 20%;
+}
+
+.authorcell {
+	width: 50%;
+}
+
+.indatecell {
+	width: 30%;
+}
+
+.textrow {
+	width: 100%;
+	font-family: "Nanum Gothic";
+}

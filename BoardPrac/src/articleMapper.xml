@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 게시글 처리 SQL -->
+<mapper namespace="dao.ArticleMapper">
+	<!-- 게시글 등록 -->
+	<insert id="writeArticle" parameterType="Article">
+		INSERT INTO projectboard
+			(num, title, text, author)
+		VALUES
+			(PROJECTBOARD_SEQ.nextval, #{title}, #{text}, #{author})
+	</insert>
+	
+	<!-- 게시글 가져오기 -->
+	<select id="readArticles" resultType="Article">
+		SELECT
+			*
+		FROM
+			projectboard
+		ORDER BY
+			num DESC
+	</select>
+	
+	<!-- 게시글 하나 가져오기 -->
+	<select id="readOneArticle" parameterType="int" resultType="Article">
+		SELECT
+			*
+		FROM
+			projectboard
+		WHERE
+			num = #{value}
+	</select>
+	
+	<!-- 조회수 증가 -->
+	<update id="increaseview" parameterType="int">
+		UPDATE
+			projectboard
+		SET
+			views = views + 1
+		WHERE
+			num = #{value}
+	</update>
+</mapper>

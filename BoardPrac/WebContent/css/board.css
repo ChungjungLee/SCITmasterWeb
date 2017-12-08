@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+input[type="button"] {
+	font-family: FontAwesome;
+}
+
+.outerdiv {
+	margin: auto;
+	width: 30cm;
+}
+
+.title {
+	margin: auto;
+	/* label을 담고 있는 상자의 크기를 label만큼 줄여야 하는 듯 */
+	width: fit-content;
+}
+
+.titleheader {
+	font-size: 60px;
+	font-family: "Nanum Gothic";
+	margin: auto;
+}
+
+.articletable {
+	clear: both;
+	font-family: "Nanum Gothic";
+}
+
+.headerrow {
+	width: 100%;
+	clear: both;
+	background-color: #e6e6e6;
+	font-size: 20px;
+}
+
+.articlerow {
+	width: 100%;
+	clear: both;
+	font-size: 20px;
+}
+
+.cell {
+	float: left;
+}
+
+.headercell {
+	background-color: #e6e6e6;
+}
+
+.article-num {
+	width: 10%;
+	text-align: center;
+}
+
+.article-title {
+	width: 50%;
+}
+
+.article-author {
+	width: 10%;
+	text-align: center;
+}
+
+.article-view {
+	width: 10%;
+	text-align: center;
+}
+
+.article-date {
+	width: 10%;
+	text-align: center;
+}
+
+.paginationnav {
+	clear: both;
+	margin: auto;
+	/* content의 크기만큼 content상자의 크기를 맞춘다*/
+	width: fit-content;
+}
+
+.searchbar {
+	margin: auto;
+	text-align: center;
+}
