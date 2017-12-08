@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS 속성 페이지</title>
+		
+		<style type="text/css">
+			/* 폰트는 클라이언트의 컴퓨터에 설치되어 있어야만 적용되어 보임, 아니면 웹폰트를 사용 */
+			p#text {
+				color: #b2b266;
+				font-family: "궁서체", "arial";
+				font-size: 30px;
+				font-weight: bolder;
+				text-align: center;
+				text-decoration: underline;
+			}
+			
+			.hotelbox::after {
+				content: "";
+				clear: both;
+				display: table;
+			}
+			
+			/* width, height는 content영역의 크기를 설정, padding과 margin은 그 밖 */
+			.description {
+				float: left;
+				background-color: #41a480;
+				width: 200px;
+				height: 200px;
+				border: 2px solid red;
+			}
+			
+			.description:hover {
+				background-color: #986521;
+			}
+			
+			.hotel {
+				width: 300px;
+				height: 150px;
+				
+				margin: auto;
+				border: 1px solid black;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			
+			.hotel td {
+				border: 1px solid black;
+			}
+			
+			.hotel td:hover {
+				background-color: gold;
+			}
+			
+			#img1 {
+				height: 500px;
+				margin: auto;
+				display: block;
+			}
+			
+			.testtable {
+				display: table;
+			}
+			
+			.testspan {
+				display: block;
+				position: absolute;
+				right: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>[속성]</h1>
+		
+		<p id="text">이것은 문장입니다.</p>
+		
+		<div class="hotelbox">
+			<div class="description">
+				이것은 박스입니다.
+				박스.
+			</div>
+			
+			<table class="hotel">
+				<tr>
+					<td>101호</td>
+					<td>102호</td>
+					<td>103호</td>
+				</tr>
+				<tr>
+					<td>201호</td>
+					<td>202호</td>
+					<td>203호</td>
+				</tr>
+				<tr>
+					<td>301호</td>
+					<td>302호</td>
+					<td>303호</td>
+				</tr>
+			</table>
+		</div>
+		
+		<br>
+		
+		<img id="img1" alt="호텔사진" src="https://img.hoteltime.co.kr/landing/img_hotel_09-1.jpg">
+		
+		<br>
+		
+		<table class="testtable">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+		</table>
+		
+		<input type="submit" class="testspan" value="예약">
+		
+		
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

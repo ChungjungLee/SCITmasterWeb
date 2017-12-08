@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS 1 page</title>
+		
+		<style type="text/css">
+			/* <style> 태그 내 주석은 이런 방식뿐이다 */
+			
+			/* tag 선택자, 태그명만 써주면 되겠다 */
+			p {
+				color : red;
+			}
+			
+			/* class 선택자, 클래스명에 .를 써주면 되겠다 */
+			.test1 {
+				color : black;
+			}
+			
+			.text {
+				color : blue;
+			}
+			
+			.box {
+				background-color : yellow;
+			}
+			
+			/* id 선택자, 아이디명에 #을 써주면 되겠다 */
+			#textid {
+				color : green;
+			}
+			
+			/* 그룹 선택자, 선택자를 ,를 사용하여 나열하면 두 개 이상의 선택자에 동시 적용 가능 */
+			h2, h3{
+				background-color : aqua;
+			}
+			
+			/* [속성 = 값] 선택자, 태그명[속성 = 값]을 써주면 된다 */
+			input[type="text"] {
+				background-color : lime;
+			}
+			
+			/* 태그 선택자 + 클래스 선택자 */
+			p.classtest1 {
+				color : gray;
+			}
+			
+			/* 태그 선택자 + 아이디 선택자*/
+			span#classtest1id {
+				color : orange;
+			}
+			
+			/* 가상 클래스(이벤트 발생시 적용할 스타일), :을 써주면 된다 */
+			/* a라는 태그에 link가 걸려 있는 경우 적용할 스타일 */
+			a:link {
+				color : lime; text-decoration: none;
+			}
+			
+			a:hover {
+				color : blue; text-decoration: underline;
+			}
+			
+			a:active {
+				color : black; text-decoration: line-through;
+			}
+			
+			a:visited {
+				color : gold; text-decoration: line-through;
+			}
+			
+			/* 후손 선택자, 선택자명1을 쓰고 띄어쓰기를 두고 하위 선택자명2를 쓰면 된다 */
+			p span {
+				color : navy;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<!-- 아래와 같은 방식의 스타일 적용은 앞으로 사용하지 않을 것 -->
+		<h1 sytle="">[선택자]</h1>
+		
+		<p>태그 선택자</p>
+		
+		<!-- 두 개 이상의 클래스 이름을 부여하려면 space를 두면 된다 -->
+		<p class="text test1 box">클래스 선택자</p>
+		<!-- span 태그는 한 줄 전체를 먹는게 아니고 글자 길이만큼만 범위를 먹는다 -->
+		<span class="text">예를 들어봅시다</span>
+		
+		<p class="test1 test2">두 이름 클래스명</p>
+		
+		<!-- tag의 id는 유일해야 한다 -->
+		<p id="textid">아이디 선택자</p>
+		
+		<h2>그룹 선택자1</h2>
+		
+		<h3>그룹 선택자2</h3>
+		
+		<input type="text">속성 = 값 선택자<br>
+		
+		<input type="password">속성 = 값 선택자 미적용 판별<br>
+		
+		<!-- 태그 선택자 + 클래스 선택자 -->
+		<p class="classtest1">테스트1</p>
+		<!-- 태그 선택자 + 아이디 선택자 -->
+		<span id="classtest1id" class="classtest1">테스트2</span>
+		
+		<!-- 어떤 이벤트가 발생했을 때 특정 스타일을 적용하고 싶다. 이럴때 사용하는 것이 가상 클래스 -->
+		<p>
+			<a href="http://www.naver.com">가상 클래스</a>
+		</p>
+		
+		<p>
+			코딩 시대 필독서
+			<span>중학생도 문과생도 시작은 HTML</span>
+			웹 개발자, 웹 기획자, 웹 디자이너가 되려면
+			<span>이 책으로 입문부터 활용까지</span>
+		</p>
+		
+		<span>HTML5 + CSS3 웹 표준의 정석</span>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

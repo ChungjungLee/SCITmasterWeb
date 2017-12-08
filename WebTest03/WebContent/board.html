@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>게시판 페이지</title>
+		<!-- bootstrap을 위한 style sheet link -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<!-- icon font를 위한 style sheet link -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- 개인적으로 제작한 CSS -->
+		<link href="board.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="outerdiv">
+			<div class="title">
+				<label class="titleheader">게 시 판</label>
+			</div>
+			
+			<div class="articletable">
+				
+				<div class="headerrow">
+					<div class="cell headercell article-num">
+						<label>글 번 호</label>
+					</div>
+					<div class="cell headercell article-title">
+						<label>제 목</label>
+					</div>
+					<div class="cell headercell article-author">
+						<label>작 성 자</label>
+					</div>
+					<div class="cell headercell article-view">
+						<label>조 회 수</label>
+					</div>
+					<div class="cell headercell article-date">
+						<label>작 성 일</label>
+					</div>
+				</div>
+				
+				<div class="articlerow">
+					<div class="cell article-num">
+						<label>1</label>
+					</div>
+					<div class="cell article-title">
+						<label>더미1</label>
+					</div>
+					<div class="cell article-author">
+						<label>쓰레기1</label>
+					</div>
+					<div class="cell article-view">
+						<label>1</label>
+					</div>
+					<div class="cell article-date">
+						<label>11/28</label>
+					</div>
+				</div>
+				
+				<div class="articlerow">
+					<div class="cell article-num">
+						<label>2</label>
+					</div>
+					<div class="cell article-title">
+						<label>더미2로 만든 글입니다.</label>
+					</div>
+					<div class="cell article-author">
+						<label>쓰레기2</label>
+					</div>
+					<div class="cell article-view">
+						<label>2</label>
+					</div>
+					<div class="cell article-date">
+						<label>11/28</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="paginationdiv">
+				<nav aria-label="Page navigation example" class="paginationnav">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+					</ul>
+				</nav>
+			</div>
+			
+			<div class="searchbar">
+				<select>
+					<option value="title">제  목</option>
+					<option value="author">작성자</option>
+					<option value="number">글번호</option>
+				</select>
+				<input type="text" placeholder="검색할 단어">
+				<input type="button" value="&#xf002;">
+			</div>
+		</div>
+	</body>
+</html>
