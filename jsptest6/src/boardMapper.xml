@@ -5,7 +5,66 @@
 
 <!-- 게시글 처리 SQL -->
 <mapper namespace="jsptest6.dao.BoardMapper">
+	
+	<!-- 게시글 읽기 -->
+	<!-- RowBounds는 paramType으로 넘겨주지 않아도 된다는 것 -->
+	<select id="selectBoardList" resultType="board">
+		SELECT
+			boardnum, 
+			id, 
+			title, 
+			TO_CHAR(inputdate,'yy/mm/dd') as inputdate,
+			hits
+		FROM
+			jsp6board
+		ORDER BY
+			boardnum DESC
+	</select>
 
+	<!-- 모든 게시글 가져오기 -->
+	<select id="selectBoardListPage" parameterType="int" resultType="board">
+		SELECT
+			*
+		FROM
+			(SELECT
+				rownum r, 
+				ot.boardnum boardnum,
+				ot.id id,
+				ot.title title,
+				ot.content content,
+				ot.inputdate inputdate,
+				ot.hits hits
+			FROM
+				(SELECT
+					boardnum, id, title, content, inputdate, hits
+				FROM
+					jsp6board
+				ORDER BY
+					inputdate DESC) ot
+			)
+		WHERE
+			r BETWEEN (#{value} * 10) - 9  AND #{value} * 10
+	</select>
+	<!-- (#{value} * 10) - 9 <= r  AND r <= #{value} * 10 -->
+	
+	<!-- 게시글 읽기 -->
+	<select id="selectBoard" parameterType="int" resultType="board">
+		SELECT
+			*
+		FROM
+			jsp6board
+		WHERE
+			boardnum = #{value}
+	</select>
+	
+	<!-- 게시글 개수 -->
+	<select id="numBoardList" resultType="int">
+		SELECT
+			COUNT(boardnum)
+		FROM
+			jsp6board
+	</select>
+	
 	<!-- 게시글 등록 -->
 	<insert id="writeBoard" parameterType="board">
 		INSERT INTO jsp6board
@@ -13,4 +72,18 @@
 		VALUES
 			(jsp6board_seq.nextval, #{id}, #{title}, #{content})
 	</insert>
+	
+	<!-- 게시글 수정 -->
+	<update id="updateBoard" parameterType="board">
+	
+	
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM
+			jsp6board
+		WHERE
+			boardnum = #{value}
+	</delete>
 </mapper>

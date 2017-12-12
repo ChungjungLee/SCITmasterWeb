@@ -10,6 +10,7 @@
 	<body>
 	
 		<%-- scriptlet 주석입니다 --%>
+		<!-- html 주석입니다 -->
 		<core:if test="${id == null}">
 		<%-- 알아서 pageScope부터 applicationScope까지 id를 찾는다 --%>
 			<ul>
@@ -30,11 +31,13 @@
 				<li>
 					<a href="member?action=updateForm">개인정보 수정</a>
 				</li>
-				<li>
-					<a href="board?action=writeForm">글쓰기</a>
-				</li>
+				
 			</ul>
 		</core:if>
+		
+		<br><br>
+		
+		<a href="board?action=list">게시판</a>
 	</body>
 </html>
 
