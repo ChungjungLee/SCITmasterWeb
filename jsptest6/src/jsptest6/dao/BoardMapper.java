@@ -21,4 +21,6 @@ public interface BoardMapper {
 	int reviseBoard(Board board);
 	
 	int deleteBoard(int boardnum);
+
+	int increaseView(int boardnum);
 }

@@ -158,6 +158,33 @@ public class BoardDAO {
 		
 		return result;
 	}
+
+	public boolean increaseView(int boardnum) {
+		SqlSession session = null;
+		boolean result = false;
+		
+		try {
+			session = sessionFactory.openSession();
+			BoardMapper mapper = session.getMapper(BoardMapper.class);
+			
+			
+			if (mapper.increaseView(boardnum) == 1) {
+				result = true;
+			}
+			
+			session.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		
+		return result;
+	}
 }
 
 

@@ -99,6 +99,7 @@ public class BoardController extends HttpServlet {
 			}
 			
 			Board board = boardDao.selectBoard(boardnum);
+			boardDao.increaseView(boardnum);
 			
 			request.setAttribute("board", board);
 			request.setAttribute("page", page);

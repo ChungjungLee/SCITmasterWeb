@@ -16,6 +16,10 @@
 			function deleteBoard() {
 				location.href="board?action=delete&boardnum=${board.boardnum}&page=${page}";
 			}
+			
+			function back() {
+				location.href="board?action=list&page=${page}";
+			}
 		</script>
 		
 		<style type="text/css">
@@ -46,6 +50,9 @@
 			</tr>
 			<tr>
 				<td colspan="3"><core:out value="${board.content}"/></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="button" value="게시판으로" onclick="javascript:back()"></td>
 			</tr>
 		</table>
 	</body>

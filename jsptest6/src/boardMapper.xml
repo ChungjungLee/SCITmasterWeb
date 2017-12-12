@@ -86,4 +86,14 @@
 		WHERE
 			boardnum = #{value}
 	</delete>
+	
+	<!-- 조회수 증가 -->
+	<update id="increaseView" parameterType="int">
+		UPDATE 
+			jsp6board
+		SET
+			hits = hits + 1
+		WHERE
+			boardnum = #{value}
+	</update>
 </mapper>
